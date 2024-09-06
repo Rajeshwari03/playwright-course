@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: Actiona/checkout@v2
+        uses: Actions/checkout@v2
       - name: Say hello
         run: echo Hello
