@@ -5,8 +5,10 @@ export const getLoginToken= async(username, password) =>{
         method: "POST",
         body:JSON.stringify({"username": username, "password": password}),
     })
+    
+    console.log(response.status, username, password);
     if(response.status !== 200){
-        throw new error("An error occured trying to get response");   
+        throw new Error("An error occurred trying to get response");   
     }
     const body= await response.json();
     return body.token;
