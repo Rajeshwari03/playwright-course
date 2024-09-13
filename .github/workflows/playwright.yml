@@ -4,7 +4,7 @@ on:
     branches: [ main ]
 jobs:
   playwrighttests:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.46.0-focal
       env:
@@ -15,7 +15,7 @@ jobs:
       - name: Run tests
         run: |
          echo "start the shopping store application"
-         ./shopping-store-windows-386 &
+         chmod +x ./shopping-store-linux-amd64 && ./shopping-store-linux-amd64 &
          echo "Install dependencies from lockfile"
          npm ci
          echo "Run Playwright tests"
